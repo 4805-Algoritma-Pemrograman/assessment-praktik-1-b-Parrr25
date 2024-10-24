@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class BungalowRental {
@@ -30,8 +29,8 @@ public class BungalowRental {
                     biayaPelayananPersentase = 0.10;
                     break;
                 default:
-                    System.out.println("Kode bungalow tidak valid.");
-                    continue;
+                    System.out.println("Kode bungalow tidak valid. Silakan coba lagi.");
+                    continue; // Kembali ke awal loop jika kode tidak valid
             }
 
             System.out.print("Lama menginap (malam): ");
@@ -53,7 +52,7 @@ public class BungalowRental {
 
         // Menampilkan hasil
         System.out.println("Jumlah transaksi penyewaan bungalow = " + jumlahTransaksi);
-        System.out.println("Total pendapatan = " + totalPendapatan);
+        System.out.printf("Total pendapatan = %.1f\n", totalPendapatan);
         
         scanner.close();
     }
