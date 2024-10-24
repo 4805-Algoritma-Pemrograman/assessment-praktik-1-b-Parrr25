@@ -13,12 +13,12 @@ public class Komisi {
         
         // Jika total penjualan kurang dari atau sama dengan 500.000
         if (totalPenjualan <= batasPenjualan) {
-            komisi = totalPenjualan * 0.10;
+            komisi = totalPenjualan * 0.1;
         } else {
             // Komisi untuk 500.000 pertama
             komisi = batasPenjualan * 0.1;
             // Komisi untuk sisa penjualan di atas 500.000
-            komisi += (totalPenjualan - batasPenjualan) * 0.15;
+            komisi += (totalPenjualan - batasPenjualan) * 0.10;
         }
         
         // Menampilkan hasil komisi
