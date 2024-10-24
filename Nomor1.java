@@ -1,30 +1,27 @@
 import java.util.Scanner;
 
-public class Komisi {
+public class KomisiSalesman {
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        
-        // Meminta input total penjualan
+        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Total penjualan salesman: ");
-        double totalPenjualan = input.nextDouble();
-        
-        double komisi = 0.1;
-        double batasPenjualan = 500000;
-        
-        // Jika total penjualan kurang dari atau sama dengan 500.000
-        if (totalPenjualan <= batasPenjualan) {
+        int totalPenjualan = scanner.nextInt();
+
+        double komisi = hitungKomisi(totalPenjualan);
+
+        System.out.println("Komisi yang didapatkan = " + komisi);
+    }
+
+    public static double hitungKomisi(int totalPenjualan) {
+        double komisi = 0;
+
+        if (totalPenjualan <= 500000) {
             komisi = totalPenjualan * 0.1;
         } else {
-            // Komisi untuk 500.000 pertama
-            komisi = batasPenjualan * 0.1;
-            // Komisi untuk sisa penjualan di atas 500.000
-            komisi += (totalPenjualan - batasPenjualan) * 0.10;
+            komisi = 500000 * 0.1 + (totalPenjualan - 500000) * 0.15;
         }
-        
-        // Menampilkan hasil komisi
-        System.out.println("Total penjualan salesman: " + totalPenjualan);
-        System.out.println("Komisi yang didapatkan = " + komisi);
-        
-        input.close();
+
+        return komisi;
     }
 }
